@@ -23,7 +23,7 @@ pipeline {
                 script{
                 sh """
                 echo "Hello Build"
-                Select the environment to deploy to ${params.ENV}
+                echo "Select the environment to deploy to ${params.ENV}"
                 env
                 """
                 }

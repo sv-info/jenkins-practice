@@ -16,6 +16,7 @@ pipeline {
             choices: ['dev', 'qa', 'prod'],
             description: 'Select the environment to deploy to'
         )
+    }
     stages {
         stage('Build') {
             steps {

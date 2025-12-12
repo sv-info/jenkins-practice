@@ -35,9 +35,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                script{
-                input {
+            input {
                 message "Should we continue?"
                 ok "Yes, we should."
                 submitter "alice,bob"
@@ -48,7 +46,7 @@ pipeline {
             steps {
                 echo "Hello, ${PERSON}, nice to meet you."
             }
-                }
+            steps {
                 echo 'Deploying....'
             }
         }

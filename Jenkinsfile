@@ -9,13 +9,20 @@ pipeline {
         timeout(time: 1, unit: 'MINUTES') 
         disableConcurrentBuilds()
     }
+    parameters {
+        // Environment selection
+        choice(
+            name: 'ENV',
+            choices: ['dev', 'qa', 'prod'],
+            description: 'Select the environment to deploy to'
+        )
     stages {
         stage('Build') {
             steps {
                 script{
                 sh """
                 echo "Hello Build"
-                sleep 10
+                Select the environment to deploy to ${params.ENV}
                 env
                 """
                 }
